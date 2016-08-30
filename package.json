@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ApolloCrawler/microcrawler-crawler-sreality.cz#readme",
   "processors": {
     "details": "src/details.js",
-    "index": "src/index.js"
+    "index": "src/index.js",
     "listing": "src/listing.js"
   }
 }
