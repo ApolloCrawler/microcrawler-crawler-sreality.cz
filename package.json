@@ -1,6 +1,6 @@
 {
   "name": "microcrawler-crawler-sreality.cz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ApolloCrawler/microcrawler-crawler-sreality.cz/issues"
   },
-  "homepage": "https://github.com/ApolloCrawler/microcrawler-crawler-sreality.cz#readme"
+  "homepage": "https://github.com/ApolloCrawler/microcrawler-crawler-sreality.cz#readme",
+  "processors": {
+    "details": "src/details.js",
+    "index": "src/index.js"
+    "listing": "src/listing.js"
+  }
 }
