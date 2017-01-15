@@ -18,6 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+var diacritics = require('diacritics');
 var querystring = require('querystring');
 var url = require('url');
 

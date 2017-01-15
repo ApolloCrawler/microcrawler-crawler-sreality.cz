@@ -31,7 +31,7 @@ var exports = module.exports = function($, item) {
     results.push({
       type: 'url',
       url: tmpUrl,
-      processor: 'sreality.cz.listing'
+      processor: 'sreality.cz/listing'
     });
   });
 
@@ -42,7 +42,7 @@ var exports = module.exports = function($, item) {
     results.push({
       type: 'url',
       url: tmpUrl,
-      processor: 'sreality.cz.details'
+      processor: 'sreality.cz/details'
     });
   });
 
