@@ -21,14 +21,22 @@
 var querystring = require('querystring');
 var url = require('url');
 
-var default_url = 'https://www.sreality.cz/hledani/prodej/byty/jihomoravsky-kraj,vysocina-kraj,jihocesky-kraj,plzensky-kraj,karlovarsky-kraj,ustecky-kraj,stredocesky-kraj,praha,liberecky-kraj,kralovehradecky-kraj,pardubicky-kraj,moravskoslezsky-kraj,olomoucky-kraj,zlinsky-kraj?velikost=1%2Bkk,1%2B1,2%2Bkk,2%2B1,4%2B1,4%2Bkk,3%2Bkk,3%2B1,5%2Bkk,5%2B1,6-a-vice,atypicky&stav=spatny-stav,dobry-stav,velmi-dobry-stav,ve-vystavbe,developerske-projekty,novostavby,k-demolici,pred-rekonstrukci,po-rekonstrukci?_escaped_fragment_=';
-
 var exports = module.exports = function($, item) {
-    return [
-        {
-            type: 'url',
-            url: default_url,
-            processor: 'sreality.cz/listing'
-        }
+    var seed = [
+        'https://www.sreality.cz/hledani/drazby/byty?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/prodej/byty?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/pronajem/byty?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/drazby/domy?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/prodej/domy?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/pronajem/domy?_escaped_fragment_=',
+        'https://www.sreality.cz/projekt?_escaped_fragment_='
     ];
+
+   return seed.map(function(url) {
+        return {
+            type: 'url',
+            url: url,
+            processor: 'sreality.cz/listing'
+        };
+    });
 };
