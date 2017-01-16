@@ -25,7 +25,7 @@ var exports = module.exports = function($, item) {
   var results = [];
 
   $('a.btn-paging').each(function() {
-    var tmpUrl = 'http://sreality.cz' + $(this).attr('href') + '&_escaped_fragment_=';
+    var tmpUrl = 'http://sreality.cz' + $(this).attr('href');
     var parsedUrl = url.parse(tmpUrl);
 
     results.push({
@@ -36,7 +36,7 @@ var exports = module.exports = function($, item) {
   });
 
   $('span.basic > h2 > a').each(function() {
-    var tmpUrl = 'http://sreality.cz' + $(this).attr('href') + '?blah=1&_escaped_fragment_=';
+    var tmpUrl = 'http://sreality.cz' + $(this).attr('href');
     var parsedUrl = url.parse(tmpUrl);
 
     results.push({
