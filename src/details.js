@@ -66,6 +66,8 @@ var fixLabel = function(str) {
 
 var exports = module.exports = function ($, item) {
   var loc = $('span.location').first().text();
+  var mesto = loc.split(', ')[1];
+  var ulice = loc.split(', ')[0];
 
   var urlSegments = item.url.split('/'); // ["prodej", "dum", "rodinny"]
   var result = {
@@ -73,8 +75,8 @@ var exports = module.exports = function ($, item) {
     data: {
       web: item.url,
       jmeno: $('div.property-title > h1 > span > span.name').first().text(),
-      mesto: loc.split(', ')[1].trim(),
-      ulice: loc.split(', ')[0].trim(),
+      mesto: mesto && mesto.trim(),
+      ulice: ulice && ulice.trim(),
       operace: urlSegments[4],
       kategorie: urlSegments[5],
       subkategorie: urlSegments[6]
