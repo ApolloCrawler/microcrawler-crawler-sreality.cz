@@ -21,6 +21,7 @@
 var diacritics = require('diacritics');
 var querystring = require('querystring');
 var url = require('url');
+var moment = require('moment');
 
 var tryConvertValue = function (value, defaultValue) {
   var tmp = value.match(/\d+/g);
@@ -72,8 +73,8 @@ var exports = module.exports = function ($, item) {
     data: {
       web: item.url,
       jmeno: $('div.property-title > h1 > span > span.name').first().text(),
-      mesto: loc.split(', ')[1],
-      ulice: loc.split(', ')[0],
+      mesto: loc.split(', ')[1].trim(),
+      ulice: loc.split(', ')[0].trim(),
       operace: urlSegments[4],
       kategorie: urlSegments[5],
       subkategorie: urlSegments[6]
@@ -95,7 +96,23 @@ var exports = module.exports = function ($, item) {
         value = value.split(', ');
       }
 
-      result.data[fixLabel(label)] = shouldConvert(label) ? tryConvertValue(value) : value;
+      if (typeof value == 'string') {
+        value = value.trim();
+      }
+
+      const fixedLabel = fixLabel(label);
+      if (fixedLabel === 'aktualizace') {
+        if (value === 'Dnes') {
+          value = moment.utc().startOf('d').toISOString();
+        } else if (value === 'Včera') {
+          value = moment.utc().add(-1, 'days').startOf('d').toISOString();
+        } else {
+          value = moment.utc(value, 'DD.MM.YYYY').toISOString();
+        }
+      }
+
+
+      result.data[fixedLabel] = shouldConvert(label) ? tryConvertValue(value) : value;
     });
   }
 
