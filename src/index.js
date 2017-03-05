@@ -23,12 +23,12 @@ var url = require('url');
 
 var exports = module.exports = function($, item) {
     var seed = [
-        'https://www.sreality.cz/hledani/drazby/byty',
-        'https://www.sreality.cz/hledani/prodej/byty',
-        'https://www.sreality.cz/hledani/pronajem/byty',
-        'https://www.sreality.cz/hledani/drazby/domy',
-        'https://www.sreality.cz/hledani/prodej/domy',
-        'https://www.sreality.cz/hledani/pronajem/domy',
+        'https://www.sreality.cz/hledani/drazby/byty?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/prodej/byty?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/pronajem/byty?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/drazby/domy?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/prodej/domy?_escaped_fragment_=',
+        'https://www.sreality.cz/hledani/pronajem/domy?_escaped_fragment_=',
         'https://www.sreality.cz/projekt'
     ];
 
