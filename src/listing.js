@@ -25,7 +25,7 @@ var exports = module.exports = function($, item) {
   var results = [];
 
   $('a.btn-paging').each(function() {
-    var tmpUrl = 'http://sreality.cz' + $(this).attr('href') + '?_escaped_fragment_=';
+    var tmpUrl = 'http://sreality.cz' + $(this).attr('href') + '&_escaped_fragment_=';
     var parsedUrl = url.parse(tmpUrl);
 
     results.push({
